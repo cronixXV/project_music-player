@@ -144,18 +144,36 @@ hr {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 2px;
   outline: none;
+  cursor: pointer; /* Добавляем курсор руки при наведении */
 }
 
-#music-progress::-webkit-progress-bar {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-#music-progress::-webkit-progress-value {
+#music-progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
   background-color: #fff;
-  border-radius: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  opacity: 0; /* Скрываем ползунок перемотки по умолчанию */
 }
 
-#music-progress::-moz-progress-bar {
+#music-progress:hover::-webkit-slider-thumb {
+  opacity: 1; /* Показываем ползунок перемотки при наведении */
+}
+
+#music-progress::-moz-range-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
   background-color: #fff;
-  border-radius: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  opacity: 0; /* Скрываем ползунок перемотки по умолчанию */
+}
+
+#music-progress:hover::-moz-range-thumb {
+  opacity: 1; /* Показываем ползунок перемотки при наведении */
 }

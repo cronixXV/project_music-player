@@ -45,8 +45,9 @@
         </p>
       </div>
     </div>
-    <script src="./js/App.js"></script>
-    <script>
+    <script src="./js/App.js" type="module"></script>
+    <script type="module">
+      import App from "./js/App.js";
       document.addEventListener("DOMContentLoaded", () => {
         let playerElement = document.getElementById("player");
         let containerMusicElement = document.querySelector(".container-music");
