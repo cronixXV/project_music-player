@@ -40,6 +40,7 @@ class App {
         this.pauseMusic();
       });
 
+    //перемотка песен в инпуте
     this.musicProgressElement.addEventListener("click", (event) => {
       const clickPosition = event.offsetX;
       const progressWidth = this.musicProgressElement.clientWidth;
