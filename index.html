@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Интерактивный музыкальный проигрыватель</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="./img/image.png" alt="logo" id="headphones" />
+
+      <audio id="player">
+        <source
+          id="sourse"
+          src="./music/Syzz - Gimme Gimme Gimme (a man after midnight).mp3"
+        />
+        Браузер не поддерживает html5 или данный формат audio
+      </audio>
+
+      <progress id="music-progress" value="0" max="100"></progress>
+      <div id="music-info">
+        <p id="music-current"></p>
+        <div class="music-actions" id="music-actions">
+          <span id="music-actions-start">&#9658;</span>
+          <span id="music-actions-pause">&#10074;</span>
+        </div>
+        <p>Уровень громкости</p>
+        <div class="music-volume">
+          <span>- </span>
+          <input type="range" id="volume-slider" min="0" max="100" step="1" />
+          <span> +</span>
+        </div>
+      </div>
+
+      <h2>Список композиций</h2>
+      <div id="container-music" class="container-music">
+        <hr />
+        <p class="footer">
+          Музыка взята с сайта:
+          <a class="footer-link" href="https://spotifymusic.ru/"
+            >https://spotifymusic.ru/</a
+          >
+        </p>
+      </div>
+    </div>
+    <script src="./js/App.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let playerElement = document.getElementById("player");
+        let containerMusicElement = document.querySelector(".container-music");
+        let sourceElement = document.querySelector("#sourse");
+        let volumeSliderElement = document.querySelector("#volume-slider");
+        let musicProgressElement = document.querySelector("#music-progress");
+        let musicActionsElement = document.querySelector("#music-actions");
+
+        const app = new App(
+          playerElement,
+          containerMusicElement,
+          sourceElement,
+          volumeSliderElement,
+          musicProgressElement,
+          musicActionsElement
+        );
+
+        app.init();
+      });
+    </script>
+  </body>
+</html>
