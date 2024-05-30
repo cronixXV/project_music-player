@@ -10,6 +10,10 @@ body {
   padding: 20px;
 }
 
+.img {
+  padding-bottom: 25px;
+}
+
 #headphones {
   display: block;
   margin: 0 auto;
