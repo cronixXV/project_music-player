@@ -17,4 +17,4 @@
 
 ## Лицензия
 
-GitHub для данного проекта: <https://github.com/cronixXV/project_music-player>
+![GitHub](https://img.shields.io/github/license/iwebexpert/js-junior-nodejs-api)
